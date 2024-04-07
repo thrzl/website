@@ -80,7 +80,7 @@
                             href={album.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="border-0 group relative mx-8 snap-start snap-always rounded-lg before:absolute max-h-min before:inset-0 before:z-10 before:bg-black before:opacity-0 before:transition before:duration-300 hover:before:opacity-50 max-h-[300px] w-72 h-72 md:w-64 md:h-64 slide-anim animate-fade-in"
+                            class="border-0 group relative mx-8 snap-center snap-always rounded-lg before:absolute max-h-min before:inset-0 before:z-10 before:bg-black before:opacity-0 before:transition before:duration-300 hover:before:opacity-50 max-h-[300px] w-72 h-72 md:w-64 md:h-64 slide-anim animate-fade-in"
                             style={`--delay: ${i * 100 + 200}ms`}
                         >
                             <div class="bg-slate-900 rounded-lg overflow-hidden max-h-[300px] w-72 h-72 md:w-64 md:h-64">

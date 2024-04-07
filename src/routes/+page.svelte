@@ -26,15 +26,15 @@
 </script>
 
 <div class="snap-y snap-mandatory overflow-auto h-screen scroll-smooth" id="container">
-	<main class="flex items-center justify-center h-screen bg-black pb-10 snap-center" id="home">
-		<div class="flex items-center">
+	<main class="flex flex-col md:flex-row items-center justify-center h-screen bg-black pb-10 snap-center" id="home">
+		<div class="flex flex-col md:flex-row items-center">
 			<img
-				class="w-50 h-50 rounded-full bg-blue-200 mr-8"
+				class="w-40 h-40 md:w-50 md:h-50 rounded-full bg-blue-200 mx-8"
 				src="https://github.com/thrzl.png"
 				alt="profile from github"
 			/>
-			<div>
-				<h1 class="text-5xl font-bold text-white mb-2">hey, i'm terry</h1>
+			<div class="text-center md:text-left">
+				<h1 class="text-3xl md:text-5xl font-bold text-white mb-2">hey, i'm terry</h1>
 				<p class="text-gray-300">
 					i'm a programmer from pg county, maryland<br />currently working
 					<b>research + development</b>
