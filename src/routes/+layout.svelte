@@ -1,12 +1,7 @@
 <script lang="ts">
 	import 'uno.css';
+	import { page } from '$app/stores';
 
-	let section = 0;
-
-	// function scrollToElement(id) {
-	// 	// const element = document.getElementById(id);
-	// 	scrollElement(id, { offset: 0 });
-	// }
 	function scrollToElement(id) {
 		const element = document.getElementById(id);
 		if (element) {
@@ -21,6 +16,12 @@
 	}
 
 </script>
+<svelte:head>
+	<title>
+		/home/thrzl{$page.url.pathname}
+	</title>
+	<link rel="stylesheet" href="inter.css">
+</svelte:head>
 
 <nav
 	class="fixed top-0 left-0 h-max w-16 px-5 py-10 flex flex-col items-center z-999"
