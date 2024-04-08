@@ -42,7 +42,7 @@
                         >
                             <div class="bg-neutral-900 rounded-lg overflow-hidden max-h-[300px] w-72 h-72 md:w-64 md:h-64">
                                 <img
-                                    src={'/music.webp'}
+                                    src={'/music.avif'}
                                     alt={`placeholder`}
                                     class="rounded-lg transition duration-500 group-hover:scale-[1.03] group-hover:blur-sm group-hover:brightness-50 w-72 h-72 md:w-64 md:h-64"
                                 />
@@ -85,7 +85,7 @@
                         >
                             <div class="bg-slate-900 rounded-lg overflow-hidden max-h-[300px] w-72 h-72 md:w-64 md:h-64">
                                 <img
-                                    src={filterAlbumImages(album.image) || '/music.webp'}
+                                    src={filterAlbumImages(album.image) || '/music.avif'}
                                     alt={`${album.name} cover art`}
                                     class="rounded-lg transition duration-500 group-hover:scale-[1.03] group-hover:blur-sm group-hover:brightness-50 w-72 h-72 md:w-64 md:h-64"
                                 />

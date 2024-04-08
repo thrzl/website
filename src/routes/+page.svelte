@@ -30,12 +30,12 @@
 		<div class="flex flex-col md:flex-row items-center">
 			<img
 				class="w-40 h-40 md:w-50 md:h-50 rounded-full bg-blue-200 mx-8"
-				src="https://github.com/thrzl.png"
+				src="/profile.avif"
 				alt="profile from github"
 			/>
 			<div class="text-center md:text-left">
-				<h1 class="text-3xl md:text-5xl font-bold text-white mb-2">hey, i'm terry</h1>
-				<p class="text-gray-300">
+				<h1 class="text-5xl mt-5 font-bold text-white mb-2">hey, i'm terry</h1>
+				<p class="text-gray-200 text-lg line-height-tight">
 					i'm a programmer from pg county, maryland<br />currently working
 					<b>research + development</b>
 					@ <Link href="https://ey3.tech" _class="text-blue-400"><b>ey3.tech</b></Link>
@@ -45,7 +45,7 @@
 	</main>
 	<main class="flex items-center justify-center bg-black pb-10 h-screen snap-center" id="projects">
 		<div class="flex flex-col items-center w-screen">
-			<h2 class="text-3xl font-bold text-white mb-3">my best work.</h2>
+			<h2 class="text-5xl font-bold text-white mb-3">my best work.</h2>
 			<div class="flex items-center max-w-60vw md:w-85vw">
 				{#await projects}
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -68,16 +68,15 @@
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-5 grid-auto-rows-max">
 						{#each projects.repos.slice(0, 6) as project (project.full_name)}
 							<div
-								class="py-2 pb-4 px-6 block border-white rounded-xl bg-[#111] animate-fade-in duration-50"
-								style="border-width: 2px !important"
+								class="py-2 pb-4 px-6 block rounded-xl animate-fade-in duration-50"
 							>
-								<h3 class="text-xl font-bold text-white -mb-2 font-mono rounded-lg w-max">
+								<h3 class="text-xl font-bold text-white -mb-0.1 md:-mb-2 font-mono rounded-lg w-max">
 									{project.full_name.includes('thrzl')
 										? project.name.toLowerCase()
 										: project.full_name.toLowerCase()}
 								</h3>
-								<p class="text-gray-300 mb-2">{project.description}</p>
-								<Link href={project.link} _class="text-white mt-0">more info</Link>
+								<p class="text-gray-300 mb-2 hidden md:block">{project.description}</p>
+								<Link href={project.link} _class="text-white mt-1">more info</Link>
 							</div>
 						{/each}
 					</div>
