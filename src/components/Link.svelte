@@ -1,7 +1,6 @@
 <script lang="ts">
-	export let href;
-	// export let color = 'red';
-	export let _class = '';
+export let href: string;
+export const _class: string = "";
 </script>
 
 <a {href} class={`group ${_class}`}

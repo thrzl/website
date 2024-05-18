@@ -1,20 +1,19 @@
 <script lang="ts">
-	import 'uno.css';
-	import { page } from '$app/stores';
+import "uno.css";
+import { page } from "$app/stores";
 
-	function scrollToElement(id) {
-		const element = document.getElementById(id);
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' });
-		}
+function scrollToElement(id: string) {
+	const element = document.getElementById(id);
+	if (element) {
+		element.scrollIntoView({ behavior: "smooth" });
 	}
+}
 
-	function handleClick(event, id) {
-		event.preventDefault(); // Prevent the default link behavior
+function handleClick(event: Event, id: string) {
+	event.preventDefault(); // Prevent the default link behavior
 
-		scrollToElement(id);
-	}
-
+	scrollToElement(id);
+}
 </script>
 <svelte:head>
 	<title>

@@ -1,28 +1,20 @@
 <script>
-  import {scrollRef} from "svelte-scrolling"
-	import Link from '../components/Link.svelte';
-  import Music from '../components/Music.svelte';
+import Link from "../components/Link.svelte";
+import Music from "../components/Music.svelte";
 
-	async function getProjects() {
-		const res = await fetch('/api/projects');
-		const data = await res.json();
-		return data;
-	}
-	const projects = getProjects();
+async function getProjects() {
+	const res = await fetch("/api/projects");
+	const data = await res.json();
+	return data;
+}
+const projects = getProjects();
 
-  async function getMusic() {
-		const res = await fetch('/api/music');
-		const data = await res.json();
-		return data;
-	}
-	const music = getMusic();
-	// make request to https://pinned.thrzl.xyz/thrzl
-	// onMount(() => {
-	//   fetch('https://pinned.thrzl.xyz/thrzl').then(res => res.json()).then(data => {
-	//       projects = data;
-	//     });
-	// })
-	// let projects = fetch('https://pinned.thrzl.xyz/thrzl').then(res => res.json())
+async function getMusic() {
+	const res = await fetch("/api/music");
+	const data = await res.json();
+	return data;
+}
+const music = getMusic();
 </script>
 
 <div class="snap-y snap-mandatory overflow-auto h-screen scroll-smooth" id="container">
