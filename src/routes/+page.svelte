@@ -1,10 +1,10 @@
 <script>
-	import Link from '../components/Link.svelte';
-	import Music from '../components/Music.svelte';
-	import { getProjects, getMusic } from '$lib/api';
+import Link from "../components/Link.svelte";
+import Music from "../components/Music.svelte";
+import { getProjects, getMusic } from "$lib/api";
 
-	const projects = getProjects();
-	const music = getMusic();
+const projects = getProjects();
+const music = getMusic();
 </script>
 
 <div class="md:snap-y md:snap-mandatory overflow-auto h-screen md:scroll-smooth" id="container">

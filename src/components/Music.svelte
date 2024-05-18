@@ -1,17 +1,17 @@
 <script lang="ts">
-    import type {Image, Album} from "$lib/types";
-    export let albums: Promise<Album[]>;
+import type { Image, Album } from "$lib/types";
+export let albums: Promise<Album[]>;
 
 function filterAlbumImages(images: Image[]) {
 	let filteredImages = images.filter((image) => image.size === "extralarge");
 	if (filteredImages.length > 0) {
 		return filteredImages[0]["#text"];
 	}
-    filteredImages = images.filter((image) => image.size === "large");
-    if (filteredImages.length > 0) {
-        return filteredImages[0]["#text"];
-    }
-    return "/music.avif";
+	filteredImages = images.filter((image) => image.size === "large");
+	if (filteredImages.length > 0) {
+		return filteredImages[0]["#text"];
+	}
+	return "/music.avif";
 }
 </script>
 <style>
