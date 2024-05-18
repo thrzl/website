@@ -1,6 +1,6 @@
 <script lang="ts">
 export let href: string;
-export const _class: string = "";
+export let _class: string = "";
 </script>
 
 <a {href} class={`group ${_class}`}
