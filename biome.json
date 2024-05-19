@@ -9,5 +9,8 @@
 			"recommended": true
 		},
 		"ignore": ["node_modules/**/*", ".svelte-kit/**/*", ".vercel/**/*"]
+	},
+	"formatter": {
+		"ignore": ["node_modules/**/*", ".svelte-kit/**/*", ".vercel/**/*"]
 	}
 }
