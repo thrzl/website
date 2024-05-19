@@ -48,6 +48,7 @@ function handleClick(event: Event, id: string) {
 	>
 		music
 	</a>
+	<hr class="w-1/5 border-style-dotted mx-0 -ml-1"/>
 	{#each links as link}
 		<a
 			href={link.url}
