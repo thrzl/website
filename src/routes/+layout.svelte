@@ -1,6 +1,7 @@
 <script lang="ts">
 import "uno.css";
 import { page } from "$app/stores";
+import { links } from "$lib/constants.json";
 
 function scrollToElement(id: string) {
 	const element = document.getElementById(id);
@@ -15,37 +16,46 @@ function handleClick(event: Event, id: string) {
 	scrollToElement(id);
 }
 </script>
+
 <svelte:head>
 	<title>
 		/home/thrzl{$page.url.pathname}
 	</title>
-	<link rel="stylesheet" href="inter.css">
+	<link rel="stylesheet" href="inter.css" />
 </svelte:head>
 
 <nav
-	class="fixed top-0 left-0 h-max w-16 px-5 py-10 flex flex-col items-center z-999"
+	class="fixed top-0 left-0 h-max w-16 px-2 ml-2 mt-10 flex flex-col items-center justify-center z-999"
 >
 	<a
 		href="#home"
-		class="mt-4 decoration-none opacity-60 hover:opacity-100 text-white duration-450 navlink"
+		class="my-4 decoration-none opacity-60 hover:opacity-100 text-white duration-450 write-vertical-left"
 		on:click={(event) => handleClick(event, 'home')}
 	>
-		<p class="write-vertical-left">home</p>
+		home
 	</a>
 	<a
 		href="#projects"
-		class="mt-8 decoration-none opacity-60 hover:opacity-100 text-white duration-450 navlink"
+		class="my-4 decoration-none opacity-60 hover:opacity-100 text-white duration-450 write-vertical-left"
 		on:click={(event) => handleClick(event, 'projects')}
 	>
-		<p class="write-vertical-left">projects</p>
+		projects
 	</a>
 	<a
 		href="#music"
-		class="mt-8 decoration-none opacity-60 hover:opacity-100 text-white duration-450 navlink"
+		class="my-4 decoration-none opacity-60 hover:opacity-100 text-white duration-450 write-vertical-left"
 		on:click={(event) => handleClick(event, 'music')}
 	>
-		<p class="write-vertical-left">music</p>
+		music
 	</a>
+	{#each links as link}
+		<a
+			href={link.url}
+			class="my-4 decoration-none opacity-60 hover:opacity-100 text-white duration-450 write-vertical-left"
+		>
+			{link.name}
+		</a>
+	{/each}
 </nav>
 <slot />
 
