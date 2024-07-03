@@ -5,11 +5,11 @@ export let albums: Promise<Album[]>;
 function filterAlbumImages(images: Image[]) {
 	let filteredImages = images.filter((image) => image.size === "extralarge");
 	if (filteredImages.length > 0) {
-		return filteredImages[0]["#text"];
+		return filteredImages[0]["#text"].replace("300x300", "600x600");
 	}
 	filteredImages = images.filter((image) => image.size === "large");
 	if (filteredImages.length > 0) {
-		return filteredImages[0]["#text"];
+		return filteredImages[0]["#text"].replace("300x300", "600x600");
 	}
 	return "/music.avif";
 }
@@ -23,10 +23,6 @@ function filterAlbumImages(images: Image[]) {
 
 <div class="w-3/4 mx-auto">
 	{#await albums}
-		<!-- <div
-			class="relative w-screen ml-[calc(-50vw)] left-1/2 mb-12 mt-2 before:z-10"
-			style="-webkit-mask-image: linear-gradient(to right,#0000 0%,#000 25%,#000 75%,#0000 100%);"
-		> -->
         <div class="w-3/4 mx-auto">
             <div
                 class="relative w-screen ml-[calc(-50vw)] left-1/2 mb-12 mt-2 before:z-10" style="-webkit-mask-image: linear-gradient(to right,#0000 0%,#000 25%,#000 75%,#0000 100%);"
@@ -61,12 +57,7 @@ function filterAlbumImages(images: Image[]) {
                 </div>
             </div>
         </div>
-		<!-- </div> -->
 	{:then albums}
-		<!-- <div
-			class="relative w-screen ml-[calc(-50vw)] left-1/2 mb-12 mt-2 before:z-10"
-			style="-webkit-mask-image: linear-gradient(to right,#0000 0%,#000 25%,#000 75%,#0000 100%);"
-		> -->
         <div class="w-3/4 mx-auto">
             <div
                 class="relative w-screen ml-[calc(-50vw)] left-1/2 mb-12 mt-2 before:z-10" style="-webkit-mask-image: linear-gradient(to right,#0000 0%,#000 25%,#000 75%,#0000 100%);"
