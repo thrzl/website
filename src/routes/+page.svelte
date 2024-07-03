@@ -1,10 +1,8 @@
 <script>
 import Link from "../components/Link.svelte";
 import Music from "../components/Music.svelte";
-import { getProjects, getMusic } from "$lib/api";
 
-const projects = getProjects();
-const music = getMusic();
+export let data;
 </script>
 
 <div class="md:snap-y md:snap-mandatory overflow-auto h-screen md:scroll-smooth" id="container">
@@ -31,11 +29,11 @@ const music = getMusic();
 			</div>
 		</div>
 	</main>
-	<main class="flex items-center justify-center bg-black pb-10 h-screen snap-center" id="projects">
+	<main class="flex items-center justify-center bg-black pb-10 min-h-screen snap-center" id="projects">
 		<div class="flex flex-col items-center w-screen">
 			<h2 class="text-3xl md:text-5xl font-bold text-white mb-3">my best work.</h2>
 			<div class="flex items-center max-w-60vw md:w-85vw">
-				{#await projects}
+				{#await data.projects}
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 						{#each [...Array(6)] as _, i}
 							<div
@@ -83,7 +81,7 @@ const music = getMusic();
 		<div class="flex flex-col items-center w-screen">
 			<h2 class="text-3xl md:text-5xl font-bold text-white mb-3">music.</h2>
 			<div class="flex items-center max-w-60vw md:w-85vw">
-				<Music albums={music} />
+				<Music albums={data.music} />
 			</div>
 		</div>
 	</main>
