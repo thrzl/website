@@ -1,6 +1,7 @@
 <script>
 import Link from "../components/Link.svelte";
 import Music from "../components/Music.svelte";
+import profile from "../images/profile.avif";
 
 export let data;
 </script>
@@ -13,7 +14,7 @@ export let data;
 		<div class="flex flex-col md:flex-row items-center max-w-3/4">
 			<img
 				class="w-40 h-40 md:w-50 md:h-50 rounded-full bg-blue-200 mx-8"
-				src="/profile.avif"
+				src={profile}
 				alt="profile from github"
 			/>
 			<div class="text-center md:text-left">

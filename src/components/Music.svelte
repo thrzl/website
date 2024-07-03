@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { Image, Album } from "$lib/types";
 export let albums: Promise<Album[]>;
+import musicImage from "../images/music.avif";
 
 function filterAlbumImages(images: Image[]) {
 	let filteredImages = images.filter((image) => image.size === "extralarge");
@@ -11,7 +12,7 @@ function filterAlbumImages(images: Image[]) {
 	if (filteredImages.length > 0) {
 		return filteredImages[0]["#text"].replace("300x300", "600x600");
 	}
-	return "/music.avif";
+	return musicImage;
 }
 </script>
 <style>
@@ -37,7 +38,7 @@ function filterAlbumImages(images: Image[]) {
                         >
                             <div class="bg-neutral-900 rounded-lg overflow-hidden max-h-[300px] w-72 h-72 md:w-64 md:h-64">
                                 <img
-                                    src={'/music.avif'}
+                                    src={musicImage}
                                     alt={`placeholder`}
                                     class="rounded-lg transition duration-500 group-hover:scale-[1.03] group-hover:blur-sm group-hover:brightness-50 w-72 h-72 md:w-64 md:h-64"
                                 />
@@ -75,9 +76,10 @@ function filterAlbumImages(images: Image[]) {
                         >
                             <div class="bg-slate-900 rounded-lg overflow-hidden max-h-[300px] w-72 h-72 md:w-64 md:h-64">
                                 <img
-                                    src={filterAlbumImages(album.image) || '/music.avif'}
+                                    src={filterAlbumImages(album.image) || musicImage}
                                     alt={`${album.name} cover art`}
                                     class="rounded-lg transition duration-500 group-hover:scale-[1.03] group-hover:blur-sm group-hover:brightness-50 w-72 h-72 md:w-64 md:h-64"
+                                    loading="lazy"
                                 />
                             </div>
                             <div
