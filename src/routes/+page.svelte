@@ -1,8 +1,9 @@
 <script>
-import Link from "../components/Link.svelte";
-import Music from "../components/Music.svelte";
+	import Link from '../components/Link.svelte';
+	import Music from '../components/Music.svelte';
+	import profile from '../images/profile.avif';
 
-export let data;
+	export let data;
 </script>
 
 <div class="md:snap-y md:snap-mandatory overflow-auto h-screen md:scroll-smooth" id="container">
@@ -11,9 +12,9 @@ export let data;
 		id="home"
 	>
 		<div class="flex flex-col md:flex-row items-center max-w-3/4">
-			<enhanced:img
+			<img
 				class="w-40 h-40 md:w-50 md:h-50 rounded-full bg-blue-200 mx-8"
-				src="../images/profile.avif"
+				src={profile}
 				alt="profile from github"
 			/>
 			<div class="text-center md:text-left">
@@ -29,7 +30,10 @@ export let data;
 			</div>
 		</div>
 	</main>
-	<main class="flex items-center justify-center bg-black pb-10 min-h-screen snap-center" id="projects">
+	<main
+		class="flex items-center justify-center bg-black pb-10 min-h-screen snap-center"
+		id="projects"
+	>
 		<div class="flex flex-col items-center w-screen">
 			<h2 class="text-3xl md:text-5xl font-bold text-white mb-3">my best work.</h2>
 			<div class="flex items-center max-w-60vw md:w-85vw">
