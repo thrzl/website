@@ -1,5 +1,6 @@
 <script lang="ts">
 import "uno.css";
+import "../inter.css"
 import { page } from "$app/stores";
 import { links } from "$lib/constants.json";
 
@@ -21,7 +22,6 @@ function handleClick(event: Event, id: string) {
 	<title>
 		/home/thrzl{$page.url.pathname}
 	</title>
-	<link rel="stylesheet" href="inter.css" />
 </svelte:head>
 
 <nav
