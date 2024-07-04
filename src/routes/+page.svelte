@@ -34,6 +34,8 @@
 	>
 		<div class="flex flex-col md:flex-row items-center max-w-3/4">
 			<img
+				width="460px"
+				height="460px"
 				class="w-40 h-40 md:w-50 md:h-50 rounded-full bg-blue-200 mx-8"
 				src={profile}
 				alt="profile from github"
