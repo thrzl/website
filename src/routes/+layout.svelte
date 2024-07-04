@@ -25,25 +25,25 @@ function handleClick(event: Event, id: string) {
 </svelte:head>
 
 <nav
-	class="fixed top-0 left-0 h-max w-16 px-2 ml-2 mt-10 flex flex-col items-center justify-center z-999"
+	class="fixed top-0 left-0 h-max w-16 md:px-2 ml-0 mt-5 md:ml-2 md:mt-10 flex flex-col items-center justify-center z-999"
 >
 	<a
 		href="#home"
-		class="my-4 decoration-none opacity-60 hover:opacity-100 text-white duration-450 write-vertical-left"
+		class="navlink"
 		on:click={(event) => handleClick(event, 'home')}
 	>
 		home
 	</a>
 	<a
 		href="#projects"
-		class="my-4 decoration-none opacity-60 hover:opacity-100 text-white duration-450 write-vertical-left"
+		class="navlink"
 		on:click={(event) => handleClick(event, 'projects')}
 	>
 		projects
 	</a>
 	<a
 		href="#music"
-		class="my-4 decoration-none opacity-60 hover:opacity-100 text-white duration-450 write-vertical-left"
+		class="navlink"
 		on:click={(event) => handleClick(event, 'music')}
 	>
 		music
@@ -52,7 +52,7 @@ function handleClick(event: Event, id: string) {
 	{#each links as link}
 		<a
 			href={link.url}
-			class="my-4 decoration-none opacity-60 hover:opacity-100 text-white duration-450 write-vertical-left"
+			class="navlink"
 		>
 			{link.name}
 		</a>
