@@ -36,7 +36,7 @@
 </details>
 
 ### github (pinned repositories)
-`/api/github/:username`
+`/api/projects/:username`
 
 <details>
 <summary><b>example response</b></summary>
