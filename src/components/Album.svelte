@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { Album } from "$lib/types";
+    const allCapsArtists = ["Mavi", "Mike"] // artists who's names should be converted to caps
 
     // biome-ignore lint/style/useConst: can't be const as it is defined in the svelte component
     export let album: Album | undefined = undefined;
@@ -21,6 +22,15 @@
         }
         return musicImage;
     }
+
+
+function toSemiLowercase(str: string) { // i wanna preserve names in all caps/weirdly capitalized ones
+    if (str.toUpperCase() === str || str[0].toLowerCase() === str[0]) {
+        return str
+    }
+    return str.toLowerCase();
+}
+
 </script>
 
 {#if !album}
@@ -39,7 +49,7 @@
             />
         </div>
         <div
-            class="text-white z-20 absolute pl-8 md:pl-4 text-op-80 inset-2 md:inset-4 flex flex-col justify-center transition duration-500 scale-95 opacity-0 lowercase"
+            class="text-white z-20 absolute pl-8 md:pl-4 text-op-80 inset-2 md:inset-4 flex flex-col justify-center transition duration-500 scale-95 opacity-0"
         >
             <p
                 class="font-bold text-3xl md:text-2xl leading-none mb-0 invisible"
@@ -72,15 +82,15 @@
             />
         </div>
         <div
-            class="text-white z-20 absolute items-center text-left text-op-85 inset-2 md:inset-4 flex flex-col justify-center transition duration-500 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 lowercase"
+            class="text-white z-20 absolute items-center text-left text-op-85 inset-2 md:inset-4 flex flex-col justify-center transition duration-500 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100"
         >
             <p class="font-bold text-3xl leading-none mb-0.5 text-left w-4/5">
-                {album.name}
+                {toSemiLowercase(album.name.replace("- EP", "").replace("- Single", ""))}
             </p>
             <p
                 class="text-lg leading-none md:leading-tight opacity-80 mt-0 text-left w-4/5"
             >
-                {album.artist.name}
+                {allCapsArtists.includes(album.artist.name) ? album.artist.name.toUpperCase() : toSemiLowercase(album.artist.name)}
             </p>
         </div>
     </a>
