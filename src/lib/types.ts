@@ -1,20 +1,3 @@
-export interface Image {
-	size: string;
-	"#text": string;
-}
-
-export interface Album {
-	name: string;
-	artist: {
-		url: string;
-		name: string;
-		mbid: string;
-	};
-	image: Image[];
-	mbid: string;
-	url: string;
-}
-
 export interface Project {
 	full_name: string;
 	name: string;
@@ -25,3 +8,21 @@ export interface Project {
 	language_color: string;
 	language: string;
 }
+
+export interface Artist {
+	artist_credit_name: string
+	artist_mbid: string
+	join_phrase: string
+}
+
+export interface Release {
+    artist_mbids:     string[];
+    artist_name:      string;
+    artists:          Artist[];
+    caa_id:           number;
+    caa_release_mbid: string;
+    listen_count:     number;
+    release_mbid:     string;
+    release_name:     string;
+}
+

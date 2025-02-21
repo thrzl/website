@@ -99,7 +99,7 @@
 				music.
 			</h2>
 			<div class="flex items-center max-w-60vw md:w-85vw">
-				<Music albums={data.music} />
+				<Music releases={data.music} />
 			</div>
 		</div>
 	</main>
