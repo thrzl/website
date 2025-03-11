@@ -7,7 +7,7 @@ export async function GET({ url, setHeaders }) {
   if (username === "favicon.ico") return json({ status: 404 });
 
   const res = await fetch(
-    `https://api.listenbrainz.org/1/stats/user/${username}/releases?range=week&count=40`,
+    `https://api.listenbrainz.org/1/stats/user/${username}/releases?range=week&count=20`,
   );
 
   setHeaders({ "Cache-Control": "max-age=3600" });
